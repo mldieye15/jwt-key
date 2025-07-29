@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import sn.ucad.jwtkey.service.UserService;
 import sn.ucad.jwtkey.service.dto.UserDTO;
 import tech.jhipster.web.util.PaginationUtil;
 
@@ -26,10 +25,10 @@ public class PublicUserResource {
 
     private static final Logger LOG = LoggerFactory.getLogger(PublicUserResource.class);
 
-    private final UserService userService;
+    //private final UserService userService;
 
-    public PublicUserResource(UserService userService) {
-        this.userService = userService;
+    public PublicUserResource() {
+        //this.userService = userService;
     }
 
     /**
@@ -38,7 +37,7 @@ public class PublicUserResource {
      * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body all users.
      */
-    @GetMapping("/users")
+    /* @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getAllPublicUsers(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
         LOG.debug("REST request to get all public User names");
         if (!onlyContainsAllowedProperties(pageable)) {
@@ -48,7 +47,7 @@ public class PublicUserResource {
         final Page<UserDTO> page = userService.getAllPublicUsers(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
+    }*/
 
     private boolean onlyContainsAllowedProperties(Pageable pageable) {
         return pageable.getSort().stream().map(Sort.Order::getProperty).allMatch(ALLOWED_ORDERED_PROPERTIES::contains);

@@ -45,11 +45,11 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
-            createCache(cm, sn.ucad.jwtkey.repository.UserRepository.USERS_BY_LOGIN_CACHE);
+            /*createCache(cm, sn.ucad.jwtkey.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, sn.ucad.jwtkey.repository.UserRepository.USERS_BY_EMAIL_CACHE);
             createCache(cm, sn.ucad.jwtkey.domain.User.class.getName());
             createCache(cm, sn.ucad.jwtkey.domain.Authority.class.getName());
-            createCache(cm, sn.ucad.jwtkey.domain.User.class.getName() + ".authorities");
+            createCache(cm, sn.ucad.jwtkey.domain.User.class.getName() + ".authorities");*/
             // jhipster-needle-ehcache-add-entry
         };
     }

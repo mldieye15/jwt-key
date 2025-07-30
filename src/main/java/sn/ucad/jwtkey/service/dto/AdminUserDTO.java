@@ -6,8 +6,6 @@ import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
 import sn.ucad.jwtkey.config.Constants;
-import sn.ucad.jwtkey.domain.Authority;
-import sn.ucad.jwtkey.domain.User;
 
 /**
  * A DTO representing a user, with his authorities.
@@ -55,7 +53,7 @@ public class AdminUserDTO implements Serializable {
         // Empty constructor needed for Jackson.
     }
 
-    public AdminUserDTO(User user) {
+    /*public AdminUserDTO(User user) {
         this.id = user.getId();
         this.login = user.getLogin();
         this.firstName = user.getFirstName();
@@ -69,7 +67,7 @@ public class AdminUserDTO implements Serializable {
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
         this.authorities = user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet());
-    }
+    }*/
 
     public Long getId() {
         return id;

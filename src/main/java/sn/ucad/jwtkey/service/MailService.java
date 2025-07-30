@@ -14,7 +14,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
-import sn.ucad.jwtkey.domain.User;
 import tech.jhipster.config.JHipsterProperties;
 
 /**
@@ -80,7 +79,7 @@ public class MailService {
             LOG.warn("Email could not be sent to user '{}'", to, e);
         }
     }
-
+    /*
     @Async
     public void sendEmailFromTemplate(User user, String templateName, String titleKey) {
         this.sendEmailFromTemplateSync(user, templateName, titleKey);
@@ -112,9 +111,9 @@ public class MailService {
         this.sendEmailFromTemplateSync(user, "mail/creationEmail", "email.activation.title");
     }
 
-    @Async
+   @Async
     public void sendPasswordResetMail(User user) {
         LOG.debug("Sending password reset email to '{}'", user.getEmail());
         this.sendEmailFromTemplateSync(user, "mail/passwordResetEmail", "email.reset.title");
-    }
+    }*/
 }

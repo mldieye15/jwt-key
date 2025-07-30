@@ -30,10 +30,24 @@ spring:
     basename: i18n/messages
   security:
     oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: web_app
+            authorization-grant-type: authorization_code
+            #redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9081/realms/jhipster
+            user-name-attribute: preferred_username
       resourceserver:
         jwt:
           authority-prefix: ''
-          authorities-claim-name: auth
+          authorities-claim-name: roles
   task:
     execution:
       thread-name-prefix: jwtkey-task-

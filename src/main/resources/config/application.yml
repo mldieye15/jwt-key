@@ -143,8 +143,18 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          authority-prefix: ''
-          authorities-claim-name: auth
+          issuer-uri: http://localhost:8081/realms/jhipster
+      client:
+        registration:
+          keycloak:
+            client-id: web_app
+            client-secret: '' # public client
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
+            scope: openid,profile,email
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8081/realms/jhipster
   task:
     execution:
       thread-name-prefix: jwtkey-task-
@@ -163,6 +173,7 @@ spring:
       console-available: true
 
 server:
+  port: 8080
   servlet:
     session:
       cookie:

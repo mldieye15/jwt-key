@@ -19,3 +19,12 @@
         modifié :         src/main/java/sn/ucad/jwtkey/web/rest/AuthorityResource.java
         modifié :         src/main/java/sn/ucad/jwtkey/web/rest/PublicUserResource.java
         modifié :         src/main/java/sn/ucad/jwtkey/web/rest/UserResource.java
+
+ round 2
+
+         modifié :         pom.xml
+         modifié :         src/main/java/sn/ucad/jwtkey/config/SecurityConfiguration.java
+         modifié :         src/main/java/sn/ucad/jwtkey/web/rest/AuthenticateController.java
+         modifié :         src/test/resources/config/application.yml
+
+

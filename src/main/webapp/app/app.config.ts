@@ -24,6 +24,9 @@ import routes from './app.routes';
 import { NgbDateDayjsAdapter } from './config/datepicker-adapter';
 import { AppPageTitleStrategy } from './app-page-title-strategy';
 
+//
+import { OAuthModule } from 'angular-oauth2-oidc';
+
 const routerFeatures: RouterFeatures[] = [
   withComponentInputBinding(),
   withNavigationErrorHandler((e: NavigationError) => {
@@ -57,5 +60,13 @@ export const appConfig: ApplicationConfig = {
     httpInterceptorProviders,
     { provide: TitleStrategy, useClass: AppPageTitleStrategy },
     // jhipster-needle-angular-add-module JHipster will add new module here
+    importProvidersFrom(
+      OAuthModule.forRoot({
+        resourceServer: {
+          allowedUrls: ['http://localhost:8080/api'],
+          sendAccessToken: true,
+        },
+      }),
+    ),
   ],
 };

@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-//package sn.ucad.jwtkey.config;
 //
 //import static org.springframework.security.config.Customizer.withDefaults;
 //import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
